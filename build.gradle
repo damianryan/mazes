@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.damianryan.mazes'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 13
+targetCompatibility = 13
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
+repositories {
+     mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.slf4j', name: 'slf4j-api', version:'1.7.30'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version:'1.2.3'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version:'5.6.0'
+}
